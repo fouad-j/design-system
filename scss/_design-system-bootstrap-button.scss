@@ -1,19 +1,36 @@
 // Primary button
 .btn-primary {
   @include button-variant(
-    $background: $primary, $border: $primary,
-    $hover-background: $white, $hover-border: $primary, $hover-color: $primary,
-    $active-background: $white, $active-border: $red-selection, $active-color: $red-selection,
-    $disabled-background: $red-disabled, $disabled-border: $red-disabled, $disabled-color: $white);
+    $background: $primary,
+    $border: $primary,
+    $hover-background: $white,
+    $hover-border: $primary,
+    $hover-color: $primary,
+    $active-background: $white,
+    $active-border: $red-selection,
+    $active-color: $red-selection,
+    $disabled-background: $red-disabled,
+    $disabled-border: $red-disabled,
+    $disabled-color: $white
+  );
 }
 
 // Secondary button
 .btn-secondary {
   @include button-variant(
-    $background: $white, $border: $primary, $color: $primary,
-    $hover-background: $primary, $hover-border: $primary, $hover-color: $white,
-    $active-background: $red-selection, $active-border: $red-selection, $active-color: $white,
-    $disabled-background: $white, $disabled-border: $red-disabled, $disabled-color: $red-disabled);
+    $background: $white,
+    $border: $primary,
+    $color: $primary,
+    $hover-background: $primary,
+    $hover-border: $primary,
+    $hover-color: $white,
+    $active-background: $red-selection,
+    $active-border: $red-selection,
+    $active-color: $white,
+    $disabled-background: $white,
+    $disabled-border: $red-disabled,
+    $disabled-color: $red-disabled
+  );
 }
 
 // Link button
