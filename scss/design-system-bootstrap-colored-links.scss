@@ -1,22 +1,22 @@
 @each $color, $value in $theme-colors {
   .link-#{$color} {
-    text-decoration: none;
     position: relative;
+    text-decoration: none;
 
     &:hover {
-      text-decoration: underline;
       color: $value;
+      text-decoration: underline;
     }
 
     &::before {
-      border-left: 7.18px solid;
+      left: -18px;
+      display: inline-block;
+      margin-right: 7.18px;
+      content: "";
       border-top: 7.18px solid transparent;
       border-bottom: 7.18px solid transparent;
-      display: inline-block;
-      content: '';
-      left: -18px;
-      margin-right: 7.18px;
-    }      
+      border-left: 7.18px solid;
+    }
   }
 }
 

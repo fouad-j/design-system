@@ -16,15 +16,15 @@
     $disabled-background: $white, $disabled-border: $red-disabled, $disabled-color: $red-disabled);
 }
 
-// Link button 
+// Link button
 .btn-link {
-  text-decoration: none;
-  color: $primary;
   position: relative;
+  color: $primary;
+  text-decoration: none;
 
   &:hover {
-    text-decoration: underline;
     color: $primary;
+    text-decoration: underline;
   }
 
   &:focus {
@@ -32,13 +32,13 @@
   }
 
   &::before {
-    border-left: 7.18px solid;
+    left: -18px;
+    display: inline-block;
+    margin-right: 7.18px;
+    content: "";
     border-top: 7.18px solid transparent;
     border-bottom: 7.18px solid transparent;
-    display: inline-block;
-    content: '';
-    left: -18px;
-    margin-right: 7.18px;
+    border-left: 7.18px solid;
   }
 }
 
