@@ -18,3 +18,7 @@
 .bs-component:hover .source-button {
   display: block;
 }
+
+.space a {
+  margin-right: 16px;
+}

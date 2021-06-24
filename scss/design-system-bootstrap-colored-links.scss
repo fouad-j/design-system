@@ -1,0 +1,34 @@
+@each $color, $value in $theme-colors {
+  .link-#{$color} {
+    text-decoration: none;
+    position: relative;
+
+    &:hover {
+      text-decoration: underline;
+      color: $value;
+    }
+
+    &::before {
+      border-left: 7.18px solid;
+      border-top: 7.18px solid transparent;
+      border-bottom: 7.18px solid transparent;
+      display: inline-block;
+      content: '';
+      left: -18px;
+      margin-right: 7.18px;
+    }      
+  }
+}
+
+.link-secondary {
+  color: $blue-link;
+
+  &:hover {
+    color: $blue-link;
+    text-decoration: underline;
+  }
+
+  &:focus {
+    color: $blue-link;
+  }
+}

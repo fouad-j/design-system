@@ -1,6 +1,27 @@
 
 // Bring in Bootstrap
 //
+// INCLUDE FUNCTIONS FIRST TO MANIPULATE COLORS, SVGs, CALC, ETC...
+@import "bootstrap/scss/functions";
 
+// INCLUDE TDF DESIGN SYSTEM COLOR VALUES
+@import "design-system-color.scss";
+
+// REDIFINITION OF PRIMARY AND SECONDARY COLOR + CUSTOM COLOR VARIABLES
+$primary: $red-font;
+$secondary: $flat-dark-blue;
+
+// REMAINDER OF REQUIRED BOOTSTRAP STYLESHEETS
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
+// BASE 
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
 
 @import "bootstrap/scss/bootstrap";
+
+// DESIGN SYSTEM CUSTOM SCSS
+@import "design-system-bootstrap-button.scss";
+@import "design-system-bootstrap-colored-links.scss";
