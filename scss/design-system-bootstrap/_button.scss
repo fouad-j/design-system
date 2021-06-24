@@ -1,0 +1,59 @@
+// All button
+.btn {
+  font-weight: $font-weight-bold;
+}
+
+// Primary button
+.btn-primary {
+  @include button-variant(
+    $background: $primary,
+    $border: $primary,
+    $hover-background: $white,
+    $hover-border: $primary,
+    $hover-color: $primary,
+    $active-background: $white,
+    $active-border: $red-selection,
+    $active-color: $red-selection,
+    $disabled-background: $red-disabled,
+    $disabled-border: $red-disabled,
+    $disabled-color: $white
+  );
+}
+
+// Secondary button
+.btn-secondary {
+  @include button-variant(
+    $background: $white,
+    $border: $primary,
+    $color: $primary,
+    $hover-background: $primary,
+    $hover-border: $primary,
+    $hover-color: $white,
+    $active-background: $red-selection,
+    $active-border: $red-selection,
+    $active-color: $white,
+    $disabled-background: $white,
+    $disabled-border: $red-disabled,
+    $disabled-color: $red-disabled
+  );
+}
+
+// Link button
+.btn-link {
+  &::before {
+    left: -18px;
+    display: inline-block;
+    margin-right: 7.18px;
+    content: "";
+    border-top: 7.18px solid transparent;
+    border-bottom: 7.18px solid transparent;
+    border-left: 7.18px solid;
+  }
+}
+
+// Primary and Secondary button
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+    @include font-size(14px);
+  }
+}
