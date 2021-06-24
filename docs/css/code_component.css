@@ -19,6 +19,6 @@
   display: block;
 }
 
-.space a {
+.bs-component .space-link a {
   margin-right: 16px;
 }

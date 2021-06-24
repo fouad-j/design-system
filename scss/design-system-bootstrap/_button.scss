@@ -1,3 +1,8 @@
+// All button
+.btn {
+  font-weight: $font-weight-bold;
+}
+
 // Primary button
 .btn-primary {
   @include button-variant(
@@ -36,11 +41,9 @@
 // Link button
 .btn-link {
   position: relative;
-  color: $primary;
   text-decoration: none;
 
   &:hover {
-    color: $primary;
     text-decoration: underline;
   }
 

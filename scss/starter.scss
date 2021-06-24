@@ -6,9 +6,8 @@
 // INCLUDE TDF DESIGN SYSTEM COLOR VALUES
 @import "design-system-color";
 
-// REDIFINITION OF PRIMARY AND SECONDARY COLOR + CUSTOM COLOR VARIABLES
-$primary: $red-font;
-$secondary: $flat-dark-blue;
+// REDIFINITION OF BOOTSTRAP VARIABLES
+@import "design-system-bootstrap/variables";
 
 // REMAINDER OF REQUIRED BOOTSTRAP STYLESHEETS
 @import "bootstrap/scss/variables";
@@ -22,5 +21,5 @@ $secondary: $flat-dark-blue;
 @import "bootstrap/scss/bootstrap";
 
 // DESIGN SYSTEM CUSTOM SCSS
-@import "design-system-bootstrap-button";
-@import "design-system-bootstrap-colored-links";
+@import "design-system-bootstrap/button";
+@import "design-system-bootstrap/colored-links";
