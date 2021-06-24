@@ -40,16 +40,7 @@
 
 // Link button
 .btn-link {
-  position: relative;
   text-decoration: none;
-
-  &:hover {
-    text-decoration: underline;
-  }
-
-  &:focus {
-    text-decoration: underline;
-  }
 
   &::before {
     left: -18px;
@@ -66,6 +57,5 @@
 @each $color, $value in $theme-colors {
   .btn-#{$color} {
     @include font-size(14px);
-    @include border-radius(80px, 0);
   }
 }
