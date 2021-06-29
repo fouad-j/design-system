@@ -1,3 +1,7 @@
+body {
+  background-color: #f7f9fa;
+}
+
 .bs-component {
   position: relative;
   margin-bottom: 1rem;
@@ -19,6 +23,6 @@
   display: block;
 }
 
-.bs-component .space-link a {
+.bs-component.spacer a {
   margin-right: 16px;
 }

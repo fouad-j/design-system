@@ -38,19 +38,6 @@
   );
 }
 
-// Link button
-.btn-link {
-  &::before {
-    left: -18px;
-    display: inline-block;
-    margin-right: 7.18px;
-    content: "";
-    border-top: 7.18px solid transparent;
-    border-bottom: 7.18px solid transparent;
-    border-left: 7.18px solid;
-  }
-}
-
 // Primary and Secondary button
 @each $color, $value in $theme-colors {
   .btn-#{$color} {

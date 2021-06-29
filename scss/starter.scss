@@ -21,5 +21,8 @@
 @import "bootstrap/scss/bootstrap";
 
 // DESIGN SYSTEM CUSTOM SCSS
+@import "design-system-bootstrap/utilities";
 @import "design-system-bootstrap/button";
 @import "design-system-bootstrap/colored-links";
+@import "design-system-bootstrap/nav";
+@import "design-system-bootstrap/navbar";

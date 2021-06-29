@@ -1,0 +1,8 @@
+.navbar-light {
+  background-color: $white;
+  .navbar-nav {
+    .nav-link {
+      font-size: $font-size-base * .75;
+    }
+  }
+}

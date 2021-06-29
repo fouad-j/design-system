@@ -1,6 +1,7 @@
 // Global variables
 $primary: $red-font;
 $secondary: $flat-dark-blue;
+$dark: $grey-font;
 
 // Button link
 $btn-link-color: $primary;
@@ -13,3 +14,15 @@ $link-decoration: none;
 $btn-border-radius-lg: 80px;
 $btn-border-radius-sm: 80px;
 $btn-border-radius: 80px;
+
+// Nav
+$nav-tabs-border-width: 0;
+$nav-tabs-link-hover-border-color: transparent;
+
+// Navbar
+$navbar-light-color: $grey-font;
+
+// Tab
+$nav-tabs-link-active-bg: $white;
+$nav-tabs-link-active-color: $grey-font;
+$nav-tabs-link-active-border-color: none;

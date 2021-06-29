@@ -7,16 +7,6 @@
       color: $value;
       text-decoration: underline;
     }
-
-    &::before {
-      left: -18px;
-      display: inline-block;
-      margin-right: 7.18px;
-      content: "";
-      border-top: 7.18px solid transparent;
-      border-bottom: 7.18px solid transparent;
-      border-left: 7.18px solid;
-    }
   }
 }
 

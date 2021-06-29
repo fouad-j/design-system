@@ -1,0 +1,15 @@
+// Create an arrow before an element
+@each $color, $value in $theme-colors {
+  .arrow-#{$color} {
+    &::before {
+      left: -18px;
+      display: inline-block;
+      margin-right: 7.18px;
+      color: $value;
+      content: "";
+      border-top: 7.18px solid transparent;
+      border-bottom: 7.18px solid transparent;
+      border-left: 7.18px solid;
+    }
+  }
+}

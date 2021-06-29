@@ -1,0 +1,19 @@
+.nav-tabs {
+  .nav-link {
+    font-size: $font-size-base * .8;
+    font-weight: $font-weight-bold;
+    color: $grey-font;
+    text-transform: uppercase;
+
+    &:hover,
+    &:focus {
+      border-bottom: $primary solid;
+      transition: border-color .5s;
+    }
+  }
+
+  .nav-link.active,
+  .nav-item.show .nav-link {
+    border-bottom: $primary solid;
+  }
+}
