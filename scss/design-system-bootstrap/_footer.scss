@@ -1,0 +1,32 @@
+.footer-group {
+  @extend .bg-white, .pt-5, .px-3, .px-md-4, .border-top;
+
+  .footer-menu  {
+    h6 {
+      @extend .text-primary, .fw-bold;
+      font-size: 1.125rem;
+    }
+
+    ul{
+      @extend .p-2;
+    }
+
+    .footer-sub-menu {
+      @extend .mb-1;
+      list-style-type: none;
+
+      a {
+        @extend .link-dark, .arrow-primary;
+        font-size: .875rem;
+      }
+    }
+  }
+
+  .footer-logo {
+    @extend .d-flex, .justify-content-between, .align-items-center;
+  }
+
+  .footer-trademark {
+    font-size: .875rem;
+  }
+}
