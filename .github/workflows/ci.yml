@@ -6,14 +6,9 @@ env:
   FORCE_COLOR: 2
 
 jobs:
-  test:
+  test-and-build:
     name: Node ${{ matrix.node }}
     runs-on: ubuntu-latest
-
-    strategy:
-      fail-fast: false
-      matrix:
-        node: [12, 14]
 
     steps:
       - name: Clone repository
@@ -22,7 +17,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: "${{ matrix.node }}"
+          node-version: '14.x'
 
       - name: Install npm dependencies
         run: npm ci
@@ -33,9 +28,33 @@ jobs:
       - name: Build & Minify css
         run: npm run build-css
 
+  release:
+    name: Release
+    needs: test-and-build
+    runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, 'publish release')"
+    steps:
+      - name: Create a release tag
+        run: |
+          git config --local user.name "${GITHUB_ACTOR}"
+          git config --local user.email "${GITHUB_ACTOR}@users.noreply.github.com"
+          npm run release
+      - name: Push release tag
+        run: git push --follow-tags
+      - name: Upload to github packages
+        uses: actions/upload-artifact@v2
+        with:
+          name: design-system
+          path: assets/css
+
+  deploy-gh-pages:
+    name: Release
+    needs: test-and-build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    steps:
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
-        if: github.ref == 'refs/heads/main'
         with:
           branch: gh-pages
           folder: .

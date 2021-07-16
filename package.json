@@ -22,7 +22,8 @@
     "server": "browser-sync start --server --files 'assets/**' 'docs/**'",
     "start": "npm-run-all --parallel watch server",
     "watch": "nodemon -e html,scss -x \"npm run build-css\"",
-    "test": "npm run css-lint && npm run build-css"
+    "test": "npm run css-lint && npm run build-css",
+    "release": "standard-version"
   },
   "keywords": [
     "bootstrap",
@@ -50,6 +51,7 @@
     "purgecss": "^4.0.2",
     "rtlcss": "^3.1.2",
     "sass": "^1.32.12",
+    "standard-version": "^9.3.1",
     "stylelint": "^13.13.1",
     "stylelint-config-twbs-bootstrap": "^2.2.0"
   }
