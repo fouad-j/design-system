@@ -28,27 +28,26 @@ jobs:
       - name: Build & Minify css
         run: npm run build-css
 
-  release:
-    name: Release
-    needs: test-and-build
-    runs-on: ubuntu-latest
-    if: "!contains(github.event.head_commit.message, 'publish release')"
-    steps:
       - name: Create a release tag
+        if: "contains(github.event.head_commit.message, 'publish release')"
         run: |
           git config --local user.name "${GITHUB_ACTOR}"
           git config --local user.email "${GITHUB_ACTOR}@users.noreply.github.com"
           npm run release
+
       - name: Push release tag
+        if: "contains(github.event.head_commit.message, 'publish release')"
         run: git push --follow-tags
+
       - name: Upload to github packages
+        if: "contains(github.event.head_commit.message, 'publish release')"
         uses: actions/upload-artifact@v2
         with:
           name: design-system
           path: assets/css
 
   deploy-gh-pages:
-    name: Release
+    name: Deploy to GH pages
     needs: test-and-build
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main'
