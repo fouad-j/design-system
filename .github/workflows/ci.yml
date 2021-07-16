@@ -30,6 +30,9 @@ jobs:
       - name: Test
         run: npm test
 
+      - name: Build & Minify css
+        run: npm run build-css
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@4.1.4
         if: github.ref == 'refs/heads/main'
