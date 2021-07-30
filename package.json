@@ -1,5 +1,5 @@
 {
-  "name": "design-system-bootstrap",
+  "name": "@fouad-j/fouad-design-system",
   "version": "0.0.1",
   "description": "Design System Bootstrap",
   "author": "mdo",
@@ -43,6 +43,6 @@
     "stylelint-config-twbs-bootstrap": "^2.2.0"
   },
   "publishConfig": {
-    "registry":"https://npm.pkg.github.com/TotalEnergies/design-system"
+    "registry":"https://npm.pkg.github.com/@fouad-j/fouad-design-system"
   }
 }
