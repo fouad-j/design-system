@@ -1,6 +1,6 @@
 name: CI
 
-on: [push, pull_request, workflow_dispatch, tag]
+on: [push, pull_request, workflow_dispatch]
 
 env:
   FORCE_COLOR: 2
@@ -33,7 +33,7 @@ jobs:
     name: Deploy
     needs: test-and-build
     runs-on: ubuntu-latest
-    if: ${{ startsWith('refs/tags/v', github.ref) }}
+    # if: ${{ startsWith('refs/tags/v', github.ref) }}
     steps:
       - name: Download Design System assets
         uses: actions/download-artifact@v2
