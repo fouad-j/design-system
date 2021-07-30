@@ -1,6 +1,6 @@
 name: CI
 
-on: [push, pull_request, workflow_dispatch]
+on: [push, pull_request, workflow_dispatch, tag]
 
 env:
   FORCE_COLOR: 2
@@ -22,15 +22,8 @@ jobs:
         run: npm test
       - name: Build & Minify css
         run: npm run build-css
-      - name: Create & push a release tag
-        if: contains(github.event.head_commit.message, 'publish release')
-        run: |
-          git config --local user.name "${GITHUB_ACTOR}"
-          git config --local user.email "${GITHUB_ACTOR}@users.noreply.github.com"
-          npm run release
-          git push --follow-tags
       - name: Archive Design System assets
-        if: contains(github.event.head_commit.message, 'publish release')
+        if: ${{ startsWith('refs/tags/v', github.ref) }}
         uses: actions/upload-artifact@v2
         with:
           name: design-system
@@ -40,13 +33,14 @@ jobs:
     name: Deploy
     needs: test-and-build
     runs-on: ubuntu-latest
-    if: contains(github.event.head_commit.message, 'publish release')
+    if: ${{ startsWith('refs/tags/v', github.ref) }}
     steps:
       - name: Download Design System assets
         uses: actions/download-artifact@v2
         with:
           name: design-system
-      # TODO deploy to a CDN ...
+      - run: ls -al
+      # TODO deploy to github packages
 
   deploy-gh-pages:
     name: Deploy to GH pages
