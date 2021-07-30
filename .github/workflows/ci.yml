@@ -9,6 +9,8 @@ jobs:
   test-and-build:
     name: Test, Build & Tag
     runs-on: ubuntu-latest
+    env:
+      NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
     steps:
       - name: Clone repository
         uses: actions/checkout@v2
@@ -23,8 +25,7 @@ jobs:
       - name: Build & Minify css
         run: npm run build-css
       - run: npm publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+
 #      - name: Archive Design System assets
 #        if: ${{ startsWith('refs/tags/v', github.ref) }}
 #        uses: actions/upload-artifact@v2
