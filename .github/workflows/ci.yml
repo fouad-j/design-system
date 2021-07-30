@@ -6,7 +6,7 @@ env:
   FORCE_COLOR: 2
 
 jobs:
-  test-and-build-tag:
+  test-and-build:
     name: Test, Build & Tag
     runs-on: ubuntu-latest
     steps:
@@ -22,25 +22,30 @@ jobs:
         run: npm test
       - name: Build & Minify css
         run: npm run build-css
-      - name: Archive Design System assets
-        if: ${{ startsWith('refs/tags/v', github.ref) }}
-        uses: actions/upload-artifact@v2
-        with:
-          name: design-system
-          path: assets/css
+      - run: npm publish
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#      - name: Archive Design System assets
+#        if: ${{ startsWith('refs/tags/v', github.ref) }}
+#        uses: actions/upload-artifact@v2
+#        with:
+#          name: design-system
+#          path: assets/css
 
-  deploy:
-    name: Deploy
-    needs: test-and-build
-    runs-on: ubuntu-latest
-    # if: ${{ startsWith('refs/tags/v', github.ref) }}
-    steps:
-      - name: Download Design System assets
-        uses: actions/download-artifact@v2
-        with:
-          name: design-system
-      - run: ls -al
-      # TODO deploy to github packages
+#  deploy:
+#    name: Deploy to Github Packages
+#    needs: test-and-build
+#    runs-on: ubuntu-latest
+#    # if: ${{ startsWith('refs/tags/v', github.ref) }}
+#    steps:
+#      - name: Download Design System assets
+#        uses: actions/download-artifact@v2
+#        with:
+#          name: design-system
+#      - run: ls -al
+#      - run: npm publish
+#        env:
+#          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
   deploy-gh-pages:
     name: Deploy to GH pages

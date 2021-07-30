@@ -1,18 +1,17 @@
 {
-  "name": "bootstrap-npm-starter",
-  "version": "1.4.1",
-  "private": true,
-  "description": "Demo project for building a Bootstrap powered site via npm.",
+  "name": "design-system-bootstrap",
+  "version": "0.0.1",
+  "description": "Design System Bootstrap",
   "author": "mdo",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/twbs/bootstrap-npm-starter.git"
+    "url": "git+https://github.com/TotalEnergies/design-system.git"
   },
   "bugs": {
-    "url": "https://github.com/twbs/bootstrap-npm-starter/issues"
+    "url": "https://github.com/TotalEnergies/design-system/issues"
   },
-  "homepage": "https://github.com/twbs/bootstrap-npm-starter#readme",
+  "homepage": "https://github.com/TotalEnergies/design-system#readme",
   "scripts": {
     "build-css": "npm-run-all css-compile css-prefix",
     "css-compile": "sass --style compressed --source-map --embed-sources --no-error-css --load-path=node_modules scss/:assets/css/",
@@ -24,15 +23,6 @@
     "test": "npm run css-lint && npm run build-css",
     "release": "standard-version"
   },
-  "keywords": [
-    "bootstrap",
-    "sass",
-    "css",
-    "javascript",
-    "starter",
-    "template",
-    "design-system"
-  ],
   "dependencies": {
     "@popperjs/core": "^2.9.2",
     "bootstrap": "^5.0.0",
@@ -51,5 +41,8 @@
     "standard-version": "^9.3.1",
     "stylelint": "^13.13.1",
     "stylelint-config-twbs-bootstrap": "^2.2.0"
+  },
+  "publishConfig": {
+    "registry":"https://npm.pkg.github.com/TotalEnergies/design-system"
   }
 }
